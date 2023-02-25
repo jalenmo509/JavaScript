@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+:root {
+  --clr-dark: rgb(19, 19, 19);
+  --clr-light: rgb(226, 226, 226);
+  --clr-blue:rgb(0, 0, 174);
+  --clr-light-blue:rgb(0, 0, 215);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+  background-color: var(--clr-blue);
+}
+
+header {
+  background-color: var(--clr-dark);
+  padding: .5em;
+  color: var(--clr-light);
+  min-height: 70px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  min-height: calc(100vh - 70px);
+}
+
+.circle {
+  width: 500px;
+  height: 500px;
+  background-color: var(--clr-dark);
+  border-radius: 50%;
+}
+
+.circle h2 {
+  font-size: 12em;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: var(--clr-light);
+  color: black;
+  border-radius: 50%;
+}
+
+.circle p {
+  color: var(--clr-light);
+  font-size: x-large;
+  text-shadow:
+    0 0 7px var(--clr-blue),
+    0 0 10px var(--clr-blue),
+    0 0 21px var(--clr-blue),
+    0 0 42px var(--clr-light-blue),
+    0 0 82px var(--clr-light-blue),
+    0 0 92px var(--clr-light-blue);
+  animation: fade-in linear 2s;
+}
+
+.circle:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade-in {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
